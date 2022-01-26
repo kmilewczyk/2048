@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  elems = [
+    '', '', '', '', '',
+    '', '2', '', '', '',
+    '', '', '', '16', '',
+    '', '256', '', '', '',
+    '', '', '2048', '2', '4',
+  ];
 
   constructor() { }
 

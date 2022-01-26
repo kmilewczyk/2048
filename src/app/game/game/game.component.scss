@@ -1,0 +1,24 @@
+@import '../../../scss/mixins.scss';
+
+.navbar-brand {
+    font-size: 3rem;
+}
+
+.game {
+    border-radius: 3%;
+    background: mix($gray-800, $red, 80%);
+}
+
+.slot {
+    padding: 1.5vw;
+    margin: 0.5vw;
+    background: mix($gray-900, $red , 90%);
+    border-radius: 5%;
+}
+
+@include media-breakpoint-up(sm) {
+    .slot {
+        padding: 0.6rem;
+        margin: 0.3rem;
+    }
+}
