@@ -1,5 +1,5 @@
-<div class="tile">
-    <h1 #tileValue>
-        <ng-content></ng-content>
+<div [classList]="'tile ' + tileClass(value)" #tile>
+    <h1 [classList]="valueLog > 3 ? '' : ['single-digit', 'double-digit', 'triple-digit'][valueLog]">
+        {{ value > 0 ? value : '' }}
     </h1>
 </div>

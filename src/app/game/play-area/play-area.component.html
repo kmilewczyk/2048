@@ -1,0 +1,30 @@
+<div style="max-width: 600px" class="game p-1 py-2 p-sm-2">
+    <div class="row gx-0">
+        <div class="col" *ngFor="let tile of tiles.slice(0, 4)">
+            <div class="slot">
+                <app-game-tile [value]="tile"></app-game-tile>
+            </div>
+        </div>
+    </div>
+    <div class="row gx-0">
+        <div class="col" *ngFor="let tile of tiles.slice(4, 8)">
+            <div class="slot">
+                <app-game-tile [value]="tile"></app-game-tile>
+            </div>
+        </div>
+    </div>
+    <div class="row gx-0">
+        <div class="col" *ngFor="let tile of tiles.slice(8, 12)">
+            <div class="slot">
+                <app-game-tile [value]="tile"></app-game-tile>
+            </div>
+        </div>
+    </div>
+    <div class="row gx-0">
+        <div class="col" *ngFor="let tile of tiles.slice(12, 16)">
+            <div class="slot">
+                <app-game-tile [value]="tile"></app-game-tile>
+            </div>
+        </div>
+    </div>
+</div>

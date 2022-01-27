@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Input } from '@angular/core';
 import { AfterContentChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -6,41 +6,51 @@ import { AfterContentChecked, Component, ElementRef, OnInit, ViewChild } from '@
   templateUrl: './game-tile.component.html',
   styleUrls: ['./game-tile.component.scss'],
 })
-export class GameTileComponent implements OnInit, AfterContentChecked, AfterViewInit {
-  @ViewChild('tileValue') tileValueRef: any;
+export class GameTileComponent implements OnInit {
+  @ViewChild('tile') tileElement?: ElementRef;
 
-  get tileValue(): HTMLHeadingElement {
-    return this.tileValueRef.nativeElement;
+  @Input() value: number = 0;
+
+  get tileArea(): HTMLDivElement {
+    return this.tileElement?.nativeElement as HTMLDivElement;
+  }
+
+  get tileText(): HTMLHeadingElement {
+    return this.tileArea.querySelector('h1')!;
+  }
+
+  get valueLog(): number {
+    return Math.floor(Math.log10(this.value));
   }
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.adjustFont();
-  }
-
-  ngAfterContentChecked(): void {
-  }
-
-  private adjustFont() {
-    let currentClass = this.tileValue.className;
-    if (currentClass !== "") {
-      this.tileValue.classList.remove(currentClass);
+  tileClass(value: number): string {
+    if (value < 2) {
+      return '';
     }
 
-    switch (this.tileValue.textContent?.length) {
-      case 1:
-        this.tileValue.classList.add('single-digit');
-        break;
-      case 2:
-        this.tileValue.classList.add('double-digit');
-        break;
-      case 3:
-        this.tileValue.classList.add('triple-digit');
-        break;
-    }
+    const log = Math.floor(Math.log2(value));
+
+    return [
+      'tile-2',
+      'tile-4',
+      'tile-8',
+      'tile-16',
+      'tile-32',
+      'tile-64',
+      'tile-128',
+      'tile-256',
+      'tile-512',
+      'tile-1024',
+      'tile-2048',
+      'tile-4096',
+      'tile-8192',
+      'tile-16384',
+      'tile-32768',
+      'tile-65536',
+    ][log-1];
   }
 }
