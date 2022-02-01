@@ -78,7 +78,6 @@ export class GameService {
 
         if (diffNeighbour !== undefined) {
           // If element of this iteration isn't on the edge
-          debugger;
 
           if (isNeighbourOccupied) {
             diffArray[this.getIndex(y, x)!] = [diffNeighbour[0], diffNeighbour[1]];
@@ -92,7 +91,6 @@ export class GameService {
       }
     }
 
-    debugger;
     for (let i of iArray) {
       for (let j of jArray) {
         let x = getX(i, j);
