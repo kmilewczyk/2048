@@ -6,13 +6,15 @@ import { GameComponent } from './game/game.component';
 import { GameTileComponent } from './game-tile/game-tile.component';
 import { PlayAreaComponent } from './play-area/play-area.component';
 import { SharedModule } from '../shared/shared.module';
+import { GameButtonsComponent } from './game-buttons/game-buttons.component';
 
 
 @NgModule({
   declarations: [
     GameComponent,
     GameTileComponent,
-    PlayAreaComponent
+    PlayAreaComponent,
+    GameButtonsComponent
   ],
   imports: [
     CommonModule,
