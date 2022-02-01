@@ -1,4 +1,4 @@
-@import '../../../scss/mixins.scss';
+@import 'variables';
 
 .game {
     border-radius: 3%;
@@ -12,7 +12,7 @@
     border-radius: 5%;
 }
 
-@include media-breakpoint-up(sm) {
+@media only screen and (min-width: $sm) {
     .slot {
         padding: 0.6rem;
         margin: 0.3rem;

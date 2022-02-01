@@ -1,4 +1,5 @@
-@import '../../../scss/mixins.scss';
+@import 'grid-breakpoints';
+@import 'variables';
 
 .tile {
     &-none { opacity: 0; }
@@ -61,7 +62,7 @@
     width: 100%;
 }
 
-@include media-breakpoint-up(sm) {
+@media only screen and (min-width: $sm)  {
     .tile h1 {
         font-size: 1.7rem;
     }
@@ -77,9 +78,9 @@
     .triple-digit {
         font-size: 2.1rem !important;
     }
-}
+};
 
-@include media-breakpoint-up(md) {
+@media only screen and (min-width: $md)  {
     .tile h1 {
         font-size: 2.1rem;
     }

@@ -14,3 +14,6 @@ last 2 Edge major versions
 last 2 Safari major versions
 last 2 iOS major versions
 Firefox ESR
+
+# TODO: Remove when angular 13.2.1 comes around
+not safari 15.2-15.3
