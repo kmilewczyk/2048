@@ -14,6 +14,6 @@ export class GameButtonsComponent implements OnInit {
   }
 
   onNewGame(): void {
-    this.gameService.moveUp();
+    this.gameService.newGame();
   }
 }
